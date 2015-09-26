@@ -35,15 +35,15 @@ def e_value(output):
 processos = [mp.Process(target=e_value, args=(output,)) for x in range(num)]
 
 # Run processes
-for p in processes:
+for p in processos:
     p.start()
 
 # Exit the completed processes
-for p in processes:
+for p in processos:
     p.join()
 
 # Get process results from the output queue
-results = [output.get() for p in processes]
+results = [output.get() for p in processos]
 #juntar os resultados dos processos
 c = 0.0
 for n in results:
