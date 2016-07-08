@@ -28,5 +28,5 @@ for p in Threads:
 	p.start()
 
 # Exit the completed processes
-for p in processos:
+for p in Threads:
 	p.join()
