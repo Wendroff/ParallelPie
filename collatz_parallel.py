@@ -5,6 +5,10 @@ NUMCPU = int(mp.cpu_count())
 def collatz(N):
 	c = N
 	while not c == 1:
+		#If c is a number 2**i, i a natural number > 1
+		#the sequence converges
+		if log(c,2).is_integer():
+			break
 		if c % 2 == 0:
 			c = c / 2
 		else:
